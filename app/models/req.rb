@@ -36,11 +36,11 @@ class Req < ActiveRecord::Base
     where("approved_bids.id IS NULL")
 
   has_many :workers, :through => :categories, :source => :people
-  has_many :bids, :order => 'created_at DESC', :dependent => :destroy
-  has_many :accepted_bids, :class_name => "Bid", :conditions => "accepted_at IS NOT NULL"
-  has_many :completed_bids, :class_name => "Bid", :conditions => "completed_at IS NOT NULL"
-  has_many :committed_bids, :class_name => "Bid", :conditions => "committed_at IS NOT NULL"
-  has_many :approved_bids, :class_name => "Bid", :conditions => "approved_at IS NOT NULL"
+  has_many :bids, -> { order(created_at: :desc) }, :dependent => :destroy
+  has_many :accepted_bids, -> { where.not(accepted_at: nil) }, :class_name => "Bid"
+  has_many :completed_bids, -> { where.not(completed_at: nil) }, :class_name => "Bid"
+  has_many :committed_bids, -> { where.not(committed_at: nil) }, :class_name => "Bid"
+  has_many :approved_bids, -> { where.not(approved_at: nil) }, :class_name => "Bid"
 
   attr_accessor :ability
   attr_protected :ability
