@@ -1,5 +1,5 @@
 GIT
-  remote: git://github.com/amro/gibbon.git
+  remote: https://github.com/amro/gibbon.git
   revision: ad1497c1251b25f77c4015416dd648afa96d01e9
   specs:
     gibbon (3.2.0)
@@ -7,7 +7,7 @@ GIT
       multi_json (>= 1.11.0)
 
 GIT
-  remote: git://github.com/rewritten/open_id_authentication.git
+  remote: https://github.com/rewritten/open_id_authentication.git
   revision: 21b0ef5a6be35a1175ba8fb279e8dab35c7c88cf
   specs:
     open_id_authentication (1.1.0)
