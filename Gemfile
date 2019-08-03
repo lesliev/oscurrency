@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 
 ruby "2.3.7"
 
-gem 'rails', '4.0'
+gem 'rails', '4.0.13'
 
 # Database
 gem 'pg', '0.21.0'
@@ -72,7 +72,7 @@ gem 'bootstrap'
 
 gem "feed-normalizer"
 gem "texticle"
-  
+
 
 # Asset group
 gem "sass-rails"
@@ -136,5 +136,3 @@ group :test do
   gem 'test-unit'
   gem 'fuubar'
 end
-
-
