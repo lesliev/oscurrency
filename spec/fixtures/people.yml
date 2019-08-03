@@ -63,8 +63,6 @@ quentin:
   crypted_password: <%= Authlogic::CryptoProviders::Sha512.encrypt("benrocks" + salt) %>
   persistence_token: <%= Authlogic::Random.hex_token %>
   perishable_token: <%= Authlogic::Random.friendly_token %>
-  created_at: <%= 5.days.ago.to_s :db %>
-  last_logged_in_at: <%= 1.day.ago.to_s :db %>
   deactivated: false
   connection_notifications: true
   message_notifications: true
@@ -80,7 +78,6 @@ aaron:
   crypted_password: <%= Authlogic::CryptoProviders::Sha512.encrypt("benrocks" + salt) %>
   persistence_token: <%= Authlogic::Random.hex_token %>
   perishable_token: <%= Authlogic::Random.friendly_token %>
-  created_at: <%= 1.day.ago.to_s :db %>
   deactivated: false
   connection_notifications: true
   message_notifications: true
@@ -95,7 +92,6 @@ buzzard:
   crypted_password: <%= Authlogic::CryptoProviders::Sha512.encrypt("benrocks" + salt) %>
   persistence_token: <%= Authlogic::Random.hex_token %>
   perishable_token: <%= Authlogic::Random.friendly_token %>
-  created_at: <%= 1.day.ago.to_s :db %>
   deactivated: false
   connection_notifications: true
   message_notifications: true
@@ -109,7 +105,6 @@ kelly:
   crypted_password: <%= Authlogic::CryptoProviders::Sha512.encrypt("benrocks" + salt) %>
   persistence_token: <%= Authlogic::Random.hex_token %>
   perishable_token: <%= Authlogic::Random.friendly_token %>
-  created_at: <%= 1.day.ago.to_s :db %>
   deactivated: false
   connection_notifications: true
   message_notifications: true
@@ -124,7 +119,6 @@ admin:
   persistence_token: <%= Authlogic::Random.hex_token %>
   perishable_token: <%= Authlogic::Random.friendly_token %>
   admin: true
-  created_at: <%= 5.days.ago.to_s :db %>
   deactivated: false
   connection_notifications: true
   message_notifications: true
@@ -137,7 +131,6 @@ deactivated:
   crypted_password: <%= Authlogic::CryptoProviders::Sha512.encrypt("benrocks" + salt) %>
   persistence_token: <%= Authlogic::Random.hex_token %>
   perishable_token: <%= Authlogic::Random.friendly_token %>
-  created_at: <%= 1.day.ago.to_s :db %>
   deactivated: true
 
 email_unverified:
@@ -148,7 +141,6 @@ email_unverified:
   crypted_password: <%= Authlogic::CryptoProviders::Sha512.encrypt("benrocks" + salt) %>
   persistence_token: <%= Authlogic::Random.hex_token %>
   perishable_token: <%= Authlogic::Random.friendly_token %>
-  created_at: <%= 1.day.ago.to_s :db %>
   email_verified: false
 
 frank:
@@ -159,7 +151,6 @@ frank:
   crypted_password: <%= Authlogic::CryptoProviders::Sha512.encrypt("benrocks" + salt) %>
   persistence_token: <%= Authlogic::Random.hex_token %>
   perishable_token: <%= Authlogic::Random.friendly_token %>
-  created_at: <%= 1.day.ago.to_s :db %>
   deactivated: false
   connection_notifications: true
   message_notifications: true
@@ -172,7 +163,6 @@ doug:
   crypted_password: <%= Authlogic::CryptoProviders::Sha512.encrypt("benrocks" + salt) %>
   persistence_token: <%= Authlogic::Random.hex_token %>
   perishable_token: <%= Authlogic::Random.friendly_token %>
-  created_at: <%= 1.day.ago.to_s :db %>
   deactivated: false
   connection_notifications: true
   message_notifications: true
