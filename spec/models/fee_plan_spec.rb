@@ -33,6 +33,6 @@ describe FeePlan do
     stripe_fee = StripeFee.create!(fee_plan: fee_plan)
     fee_plan.all_fees.should include tc_fee
     fee_plan.all_fees.should include stripe_fee
-    fee_plan.contains_stripe_fees?.should be_true
+    fee_plan.contains_stripe_fees?.should be_truthy
   end
 end

@@ -45,7 +45,4 @@ describe Exchange do
 
     exchange.should be_valid
   end
-
-  pending "should allow the customer to spend more that their credit limit if a flag is set" do
-  end
 end

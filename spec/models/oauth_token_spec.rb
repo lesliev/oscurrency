@@ -55,7 +55,7 @@ describe RequestToken do
     @token.verifier.should be_nil
   end
 
-  pending "should not be oob" do
+  skip "should not be oob" do
     @token.should_not be_oob
   end
 
@@ -254,7 +254,7 @@ describe RequestToken do
   end
 
   if defined? OAUTH_10_SUPPORT && OAUTH_10_SUPPORT
-    pending "OAuth 1.0" do
+    skip "OAuth 1.0" do
 
       it "should be oauth10" do
         @token.should be_oauth10

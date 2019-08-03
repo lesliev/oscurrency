@@ -258,12 +258,12 @@ describe Person do
       Person.mostly_active.should contain(@person)
     end
 
-    pending "should not include a deactivated person" do
+    skip "should not include a deactivated person" do
       @person.toggle!(:deactivated)
       Person.mostly_active.should_not contain(@person)
     end
 
-    pending "should not include an email unverified person" do
+    skip "should not include an email unverified person" do
       enable_email_notifications
       @person.email_verified = false; @person.save!
       Person.mostly_active.should_not contain(@person)
@@ -306,7 +306,7 @@ describe Person do
       Person.active.should_not contain(@person)
     end
 
-    pending "should not return email unverified people" do
+    skip "should not return email unverified people" do
       @person.email_verified = false
       @person.save!
       Person.active.should_not contain(@person)
@@ -323,17 +323,17 @@ describe Person do
     end
 
     it "should return true if person got fee plan with any stripe fees" do
-      @person.have_monetary_fee_plan?.should be_true
+      @person.have_monetary_fee_plan?.should be_truthy
     end
 
     it "should return true if person needs to submit their credit card credentials" do
       @person.stripe_id = nil
-      @person.credit_card_required?.should be_true
+      @person.credit_card_required?.should be_truthy
     end
 
     it "should be possible for admin to override forcing credit card credentials" do
       @person.requires_credit_card = false
-      @person.credit_card_required?.should_not be_true
+      @person.credit_card_required?.should_not be_truthy
     end
   end
 

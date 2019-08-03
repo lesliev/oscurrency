@@ -15,6 +15,7 @@ describe ApplicationHelper, :type => :helper do
       shortened = helper.first_n_words(sentence)
       shortened.should_not == sentence
       shortened.split.should have(20).words
+      expect(shortened.split.size).to eq(20)
       sentence.should start_with(shortened)
     end
 
@@ -23,7 +24,7 @@ describe ApplicationHelper, :type => :helper do
       sentence.strip!
       shortened = helper.first_n_words(sentence, 8)
       shortened.should_not == sentence
-      shortened.split.should have(8).words
+      expect(shortened.split.size).to eq(8)
       sentence.should start_with(shortened)
     end
   end
