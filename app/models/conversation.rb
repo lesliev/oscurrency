@@ -18,6 +18,4 @@ class Conversation < ActiveRecord::Base
   # only will be used for the payment of an offer
   # actually, this is a transact which is a subclass of exchange
   belongs_to :exchange
-
-
 end

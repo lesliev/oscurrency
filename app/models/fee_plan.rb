@@ -17,7 +17,7 @@ class FeePlan < ActiveRecord::Base
   validates_length_of :name,  :maximum => 100
   validates_length_of :description,  :maximum => 255
   validate :child_class_errors
-  has_many :people, :dependent => :restrict_with_exception
+  has_many :people, :dependent => :restrict
   has_many :fees
   has_many :stripe_fees
   has_many :fixed_transaction_stripe_fees, :dependent => :destroy, :inverse_of => :fee_plan
@@ -35,7 +35,7 @@ class FeePlan < ActiveRecord::Base
   accepts_nested_attributes_for :percent_transaction_stripe_fees
 
   before_destroy :subscribe_people_to_default_plan
-  default_scope -> { order(:name) }
+  default_scope -> { order(name: :asc) }
 
   class << self
     def daily_check_for_recurring_fees(time)
