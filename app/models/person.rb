@@ -198,7 +198,7 @@ class Person < ActiveRecord::Base
   has_many :feeds
   has_many :activities,
            -> {
-            inlcude(:person)
+            includes(:person)
               .where(people: { deactivated: false })
               .order(activities: { created_at: :desc })
               .limit(FEED_SIZE)
@@ -207,8 +207,8 @@ class Person < ActiveRecord::Base
 
   has_many :own_groups, -> { order(name: :asc) }, :class_name => "Group", :foreign_key => "person_id"
   has_many :memberships
-  has_many :groups, -> { where(status:  0).order(name :asc) }, :through => :memberships, :source => :group
-  has_many :groups_not_hidden, -> { where(status: 0).where("mode != 2").order(name: :asc) }, :through => :memberships, :source => :group
+  has_many :groups, -> { where(memberships: { status: 0 }).order(name :asc) }, :through => :memberships, :source => :group
+  has_many :groups_not_hidden, -> { where(memberships: { status: 0 }).where("mode != 2").order(name: :asc) }, :through => :memberships, :source => :group
 
   has_many :accounts
   has_many :addresses, :inverse_of => :person

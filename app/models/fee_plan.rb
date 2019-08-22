@@ -38,7 +38,6 @@ class FeePlan < ActiveRecord::Base
   default_scope -> { order(name: :asc) }
 
   class << self
-
     def daily_check_for_recurring_fees(time)
       Person.all.each do |person|
         FeeSchedule.new(person).charge

@@ -9,7 +9,7 @@ describe PersonMailer do
     @domain = @mailer.domain
   end
 
-   pending "message notification" do
+   skip "message notification" do
      before(:each) do
        @message = people(:quentin).received_messages.first
        @email = PersonMailer.message_notification(@message)
@@ -28,8 +28,7 @@ describe PersonMailer do
      end
    end
 
-   pending "connection request" do
-
+   skip "connection request" do
      before(:each) do
        @person  = people(:quentin)
        @contact = people(:aaron)

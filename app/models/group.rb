@@ -44,10 +44,10 @@ class Group < ActiveRecord::Base
   has_many :memberships, :dependent => :destroy
   has_many :accounts, :dependent => :destroy
   has_many :people,
-           -> { where(status: 0).order(name: :desc) },
+           -> { where(memberships: { status: 0 }).order(name: :desc) },
            :through => :memberships
   has_many :pending_request,
-           -> { where(status: 2).order(name: :desc) },
+           -> { where(memberships: { status: 2 }).order(name: :desc) },
            :through => :memberships,
            :source => "person"
 
