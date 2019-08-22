@@ -80,7 +80,7 @@ gem "uglifier"
 
 # Rails 3->4 bridge
 # FIXME: remove when everything's moved to strong params
-gem 'protected_attributes'
+gem 'protected_attributes', '= 1.0.5'
 
 gem 'jquery-ui-rails'
 
